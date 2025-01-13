@@ -12,4 +12,10 @@ export class Component {
   setup() {
     throw new Error("Method 'setup' must be implemented by derived classes");
   }
+
+  render(item, $root = this.$rootElement) {
+    item.forEach(element => {
+      Array.isArray(element) ? element.forEach(i => $root.append(i)) : $root.append(element);
+    });
+  }
 }

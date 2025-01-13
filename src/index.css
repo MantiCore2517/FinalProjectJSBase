@@ -22,6 +22,18 @@ body {
     justify-content: center;
 }
 
+.donates-container::-webkit-scrollbar {
+    width: 12px;               
+}
+.donates-container::-webkit-scrollbar-track {
+    background: #4666B1;        
+}
+.donates-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff;    
+    border-radius: 20px;       
+    border: 3px solid #4666B1;  
+}
+
 .app {
     width: 100%;
     max-width: 1200px;
@@ -41,9 +53,10 @@ body {
     list-style: none;
     border-left: 10px solid var(--primary-color);
     padding: 0;
-    max-height: 500px;
+    max-height: 220px;
     max-width: 500px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-y:auto;
 }
 
 .donates-container .donate-item {
@@ -52,16 +65,19 @@ body {
 
 .donates-container .donate-item:nth-child(odd) {
     background: #E1F1FF;
+    transition: .4s;
 }
 
 .donates-container .donate-item:nth-child(even) {
     background: white;
+    transition: .4s;
 }
 
 .donate-item {
     display: flex;
     align-items: center;
     color: var(--donate-item-text-color);
+    
 }
 
 .donate-item .delete-button {
@@ -78,10 +94,13 @@ body {
     background-color: #cc0000;
 }
 
+
+
 .donate-form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
+    
 }
 
 .total-amount {
@@ -162,7 +181,8 @@ body {
         width: 80%;
     }
 
-    .donates-container__title {
+    .donates-container__title,
+    .donates-container__empty-message {
         font-size: 2rem;
         line-height: 2.5rem;
     }
